@@ -71,3 +71,16 @@ const data = {
       postListHtml.innerHTML += `<div class="post"> ${postHtml} </div>`
   }) 
   
+  // creiamo la funzione per postare ->push text nell array posts
+
+  function pushNewText() {
+        let newText = document.querySelector(".inputText");
+
+        data.myProfile.posts.push({
+              text: newText,
+              date: '05-07-2021'
+        });
+
+
+
+  }
