@@ -29,7 +29,32 @@ new Vue(
                         date: '17-06-2021'
                     }
                 ]
+           
             }
-        },
-    }
+        
+            newPost: "",
+      },
+
+      methods: {
+
+            getCurrentDateTime: function () {
+                  const dateTimeNow = dayjs();
+                  return dateTimeNow.format("DD/MM/YYYY HH:mm:ss");
+                  
+              },
+
+            addNewPost: function (){
+                  this.myProfile.posts.push(
+                      {
+                            text: this.newPost,
+                            date: this.getCurrentDateTime(),
+
+                      }  
+
+                  );
+                  this.newPost = ""
+            },
+      }
+        
+}
 );

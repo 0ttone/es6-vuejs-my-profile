@@ -74,7 +74,7 @@ const data = {
   // creiamo la funzione per postare ->push text nell array posts
 
   function pushNewText() {
-        let newText = document.querySelector(".inputText");
+        let newText = document.querySelector(".inputText").value;
 
         data.myProfile.posts.push({
               text: newText,
@@ -82,5 +82,5 @@ const data = {
         });
 
 
-
+      newText = document.querySelector(".inputText").value = " ";
   }
