@@ -30,7 +30,7 @@ new Vue(
                     }
                 ]
            
-            }
+            },
         
             newPost: "",
       },

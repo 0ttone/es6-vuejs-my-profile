@@ -73,14 +73,41 @@ const data = {
   
   // creiamo la funzione per postare ->push text nell array posts
 
-  function pushNewText() {
-        let newText = document.querySelector(".inputText").value;
+      const buttonHtml=document.querySelector("button.send"); 
+
+      buttonHtml.addEventListener("click", () => {
+
+  //function pushNewText() {
+        let newTextHtml = document.querySelector("textarea");
+        let inputText = newTextHtml.value;
 
         data.myProfile.posts.push({
-              text: newText,
+              text: inputText,
               date: '05-07-2021'
         });
 
 
-      newText = document.querySelector(".inputText").value = " ";
-  }
+      newTextHtml.value = " ";
+  
+//agganciare in `` tutto il "post-details"
+        let post =`
+        <div class="post-details"> 
+        <div class="user-pic">
+            <img src="${data.myProfile.details.pic}" alt="user pic">
+        </div>
+        <div class="details">
+            <div class="user-name">${data.myProfile.details.name} ${data.myProfile.details.surname}</div>
+            <div class="post-date">${post.date}</div>
+        </div>
+    </div> 
+    <div class="post-text">
+        ${inputText}
+    </div>
+        
+        
+        
+        `
+            //come sopra inserire
+             postListHtml.innerHTML +=`<div class="post"> ${post} </div>`       
+
+});
